@@ -1,0 +1,28 @@
+{
+  "purpose": "New tutorial demonstration; not a paper experiment",
+  "mu": 0.5,
+  "seed": 17,
+  "source_window": "mu0.5_train_08_w0",
+  "test_index": 2,
+  "settings": [
+    [
+      20,
+      0.1
+    ],
+    [
+      50,
+      0.1
+    ],
+    [
+      20,
+      0.2
+    ]
+  ],
+  "selection": "lowest input-window NMSE; held-out trajectory used only for evaluation",
+  "decoding_mode": "sampling",
+  "odeformer": "0.1.7",
+  "torch": "2.4.1+cpu",
+  "date": "2026-10-28",
+  "device": "CPU",
+  "decoder_attempts_greedy_candidate": true
+}
