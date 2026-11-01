@@ -1,32 +1,32 @@
-# Validation — November 1, 2026
+# Numerical checks and execution environment
 
-## Completed
+The tutorial was checked with the pinned dependencies in a fresh Python 3.12 environment, using PyTorch 2.4.1 CPU. `pip check` reported no broken requirements.
 
-- Installed the pinned requirements in a **new Python 3.12 virtual environment**, including PyTorch 2.4.1 CPU. `pip check`: no broken requirements.
-- Executed the main and cylinder notebooks' enabled scientific cells in order, including setup. Optional fresh generation and optimization stayed disabled.
-- Captured outputs in execution order, with each equation heading and complete system in one Markdown-math output, plus readable plain text. Notebook schema validation passed; all code cells parse; all optional anchors resolve.
-- Recomputed candidate ranking examples using ODEFormer's actual integration path. No mock solver or replacement recorded predictions were used.
-- Compared all full-suite default shortlist decisions with their saved records. The teaching and full-suite accepted sets agree exactly on both cases.
-- Checked empty-admissible-set behavior and fallback from a rejected coefficient refinement.
-- Inspected scientific figures and complete equation outputs for full terms, legible labels, aspect ratio, and overlapping annotations.
-- Tested repository configuration in a separate copy: notebook URLs, Colab links, revision substitution, repeated configuration, and HTML preview regeneration.
+## Completed checks
 
-The final revision also reran the refined-baseline comparison: median test NMSE is 2.410520 at mu=0.5 and 0.044812 at mu=1.5 for the recorded representative baseline models. The shared equation display and all enabled notebook cells completed successfully.
+- Executed the enabled main and cylinder notebook cells in order, including setup. Optional fresh generation and optimization remained disabled.
+- Validated notebook structure, code syntax, and internal section links.
+- Recomputed ranking examples and predictions with ODEFormer's timeout-protected integration path.
+- Compared default shortlist decisions with the recorded experiments. The teaching and full verifier suites selected the same candidates in both Van der Pol cases.
+- Checked that an empty admissible shortlist returns no model and that a rejected coefficient refinement retains the admissible original equation.
+- Inspected figures and complete equation displays for legibility.
+
+`tools/check_recorded_results.py` reproduces the selection, error, and fallback checks for Van der Pol and checks that the cylinder prediction completes.
 
 ## Numerical results
 
 | Case | Selected candidate | Recomputed final test NMSE |
 |---|---:|---:|
-| Van der Pol mu=0.5 | 118 | Median over eight ICs: 0.0006985121153988921 |
-| Van der Pol mu=1.5 | 100 | Median over eight ICs: 0.0032670982694707265 |
+| Van der Pol μ=0.5 | 118 | Median over eight ICs: 0.0006985121153988921 |
+| Van der Pol μ=1.5 | 100 | Median over eight ICs: 0.0032670982694707265 |
 | Cylinder rank6/decode8 | 20 | Full 150-state test interval: 0.0688674086555076 |
 
-The Van der Pol values reproduce the prior tutorial outputs. The cylinder value also matches the previous tutorial's full-interval computation; it is distinct from window-averaged or full-field error measures in the recorded tables.
+For the recorded representative baseline models after refinement, median test NMSE is 2.410520 at μ=0.5 and 0.044812 at μ=1.5. These values describe the selected models evaluated across eight test initial conditions, rather than an aggregate across baseline model repetitions.
 
-## Execution method and practical limits
+The cylinder value measures the full test interval in reduced coordinates. Window-averaged and reconstructed-field errors in the source tables are different measures.
 
-This workspace does not support Jupyter's network kernel sockets. Cells were executed using a real in-process IPython shell with ordered stream/display capture, in the clean environment during dependency validation and in the same pinned environment for the final revisions. This executes the scientific code but does not emulate Colab's browser interface. `tools/execute_notebooks.py` provides standard nbclient execution for normal local environments.
+## Execution coverage
 
-A signed-in Colab run and a VS Code UI check have **not** been performed here. Saved equation outputs use Markdown math plus meaningful plain text, rather than a LaTeX-only MIME object or a raster equation image. The HTML previews were regenerated from the executed notebooks. Fresh checkpoint download and stochastic candidate generation were not rerun; the official loading path is retained and generation cells remain optional.
+Scientific cells were executed through an in-process IPython shell. This checks Python execution and captures outputs, but does not test the Colab or VS Code interfaces. `tools/execute_notebooks.py` provides standard Jupyter execution and HTML preview generation.
 
-Notebook setup, source links, and Colab links are configured for `https://github.com/farbodf91/ix-verifier-guided-discovery` on `main`. Temporary configuration guards have been removed. Public clone and Colab execution checks remain pending file upload.
+Colab and VS Code interface testing remains pending. Fresh pretrained-checkpoint download and stochastic candidate generation were not rerun; those operations remain optional. Saved equations include Markdown math and readable plain text, and the HTML previews include executed outputs.

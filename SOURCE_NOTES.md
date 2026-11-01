@@ -2,7 +2,7 @@
 
 The tutorial is based on Farbod Faraji and Francesco Belardinelli (2026), [Verifier-Guided Model Discovery for Physical Dynamical Systems with Pretrained Symbolic Transformers](https://arxiv.org/abs/2608.02662). Numerical records supplied by the authors define the examples.
 
-ODEFormer is from d'Ascoli et al. (ICLR 2024), [paper](https://arxiv.org/abs/2310.05573) and [official source](https://github.com/sdascoli/odeformer). The architecture illustration is attributed to that work. The environment uses released `odeformer==0.1.7`; upstream revision inspected during preparation was `c9193012ad07a97186290b98d8290d1a177f4609`. The official pretrained-checkpoint download mechanism is retained.
+ODEFormer is from d'Ascoli et al. (ICLR 2024), [paper](https://arxiv.org/abs/2310.05573) and [official source](https://github.com/sdascoli/odeformer). The architecture illustration is attributed to that work. The environment uses released `odeformer==0.1.7`; the inspected upstream revision was `c9193012ad07a97186290b98d8290d1a177f4609`. The official pretrained-checkpoint download mechanism is retained.
 
 ## Van der Pol data and ranking
 
@@ -11,7 +11,7 @@ ODEFormer is from d'Ascoli et al. (ICLR 2024), [paper](https://arxiv.org/abs/231
 - Generation uses indices `[3,4,5,11,13,16,17,18]` from the alternating early/late bank: three early and five late windows.
 - All 24 windows rank the pooled candidates. Eight separate test ICs use seed 3 and are withheld from selection and refinement.
 - Ranking averages time-mean squared errors divided by each window's coordinate variances plus 1e-12, then averages coordinates and windows.
-- Learned equations use the native ODEFormer integration path and its timeout. Failure, nonfinite values, or incomplete trajectories return failure rather than silently substituting recorded predictions. Reference trajectories use SciPy at the original tight tolerances.
+- Learned equations use the native ODEFormer integration path and its timeout. Failure, nonfinite values, or incomplete trajectories return failure. Reference trajectories use SciPy at the original tight tolerances.
 
 ## Two-check teaching policy and full-suite reproduction
 
@@ -20,7 +20,7 @@ The main notebook explicitly requests `suite="teaching"`; the helpers retain `su
 1. **Derivative consistency:** compare `np.gradient(x,t,axis=0,edge_order=2)` with the equation evaluated at observed states. Normalize by derivative variance across the complete discovery-window bank. Set the threshold to twice the minimum discrepancy in the complete ten-candidate shortlist.
 2. **Oscillation consistency:** require all three of the submitted amplitude, period, and cross-start consistency criteria. Candidate rollouts use three discovery initial conditions (indices 0,4,8), t=0..60, dt=0.05, with measurements at t>=30. Reference measurements use discovery observations at t>=8. Period is median peak spacing; amplitude is half the 99th–1st percentile range. Relative amplitude/period limits are 15%/10%; cross-start coefficients of variation are limited to 10%/5%.
 
-The full suite additionally requires state norm no greater than 1.5 times the largest observed discovery norm. Full-suite flags are retained alongside teaching-suite flags, but the teaching decision does not secretly use the additional bound. Failed rollouts fail oscillation consistency.
+The full suite additionally requires state norm no greater than 1.5 times the largest observed discovery norm. Both sets of flags are reported; the teaching selection uses derivative and oscillation consistency. Failed rollouts fail oscillation consistency.
 
 For the two default shortlists, both policies accept exactly the same sole candidates: 118 at mu=0.5 and 100 at mu=1.5. Derivative consistency alone isolates these candidates; all ten candidates in each shortlist pass the period criterion. Amplitude agreement is another component of oscillation consistency. The optional temperature-0.2, mu=1.5 record shows candidate 101 (rank 1) rejected and candidate 100 (rank 2) selected.
 
@@ -34,9 +34,9 @@ Displayed coefficients are rounded for readability; all component equations and 
 
 ## Generation settings
 
-Optional B replots `data/vanderpol/hyperparameter_sensitivity/beam_temperature_evaluation_summary.csv` for the four submitted budget/temperature configurations. It uses the archived mu=0.5 `verified_selected` rows, their full-suite decisions, and final results after coefficient refinement. The chart is a new rendering of the recorded numerical results, not an imported original figure. It does not mix the separate earlier single-window tutorial runs into those statistics. Refined systems for all four configurations are shown in full, labeled by candidate budget and temperature.
+Optional B replots `data/vanderpol/hyperparameter_sensitivity/beam_temperature_evaluation_summary.csv` for the four submitted budget/temperature configurations. It uses the archived mu=0.5 `verified_selected` rows, their full-suite decisions, and final results after coefficient refinement. Refined systems for all four configurations are shown in full, labeled by candidate budget and temperature.
 
-The older `data/decoding_settings_*` tutorial runs are retained as source data but are not used in the revised lesson. No fresh model sampling is needed for the main tutorial; optional fresh generation may yield a different candidate pool.
+The `data/decoding_settings_*` files contain supplementary single-window generation records; Optional B uses the multi-window sensitivity records listed above. No fresh model sampling is needed for the main tutorial; optional fresh generation may yield a different candidate pool.
 
 ## Cylinder flow
 
@@ -48,10 +48,10 @@ Candidate verification spans 30 time units, measures oscillations at t>=5, and u
 
 The main/companion field comparison shows two recorded matched snapshots, t*=92.6 and 100.0, from `fixed_Re300_figure_payload.npz`, with the same color scale and equal spatial aspect. Complete CFD fields are not included. The companion independently integrates the accepted symbolic model and reconstructs fields from its predicted coordinates; full-field error tables remain recorded results.
 
-## Delivery and environment
+## Environment and repository
 
-Notebooks load normal repository folders; no Base64 bundles remain. The setup installs Python 3.12-compatible pins from `requirements.txt`. CPU sessions use PyTorch's CPU wheel. Colab's official [runtime-version FAQ](https://research.google.com/colaboratory/runtime-version-faq.html), checked November 1, lists runtime 2026.07 with Python 3.12.
+The setup installs Python 3.12-compatible pins from `requirements.txt`. CPU sessions use PyTorch's CPU wheel. Colab's official [runtime-version FAQ](https://research.google.com/colaboratory/runtime-version-faq.html), checked November 1, lists runtime 2026.07 with Python 3.12.
 
-The repository is [farbodf91/ix-verifier-guided-discovery](https://github.com/farbodf91/ix-verifier-guided-discovery). Notebook setup and Colab links use this destination. `main` allows Monday corrections to appear through the same links. A tested commit/tag can be pinned with `--ref`. Existing runtime checkouts are not silently overwritten; reopen in a fresh runtime after updates.
+The repository is [farbodf91/ix-verifier-guided-discovery](https://github.com/farbodf91/ix-verifier-guided-discovery). Notebook setup and Colab links use this destination. Colab links follow the `main` branch. To retrieve repository updates, start a fresh Colab runtime and rerun setup.
 
 See `VALIDATION.md` for checks actually completed and remaining platform testing.
