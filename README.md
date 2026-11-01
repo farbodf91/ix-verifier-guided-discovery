@@ -1,8 +1,8 @@
 # Symbolic Transformers and Executable Verification for Dynamical Modeling
 
-A code-led IX/Digital Foundry tutorial by **Farbod Faraji**, based on [Faraji and Belardinelli (2026)](https://arxiv.org/abs/2608.02662).
+IX/Digital Foundry tutorial by **Farbod Faraji**, based on [Faraji and Belardinelli (2026)](https://arxiv.org/abs/2608.02662).
 
-Learn how ODEFormer generates dynamical equations, how pooling and ranking compare candidates across trajectories, and how executable physical checks guide selection. The main example is Van der Pol at μ=0.5, with μ=1.5 as a comparison. A companion explores six-coordinate cylinder-flow dynamics and spatial reconstruction.
+Learn how a symbolic transformer generates dynamical equations, how pooling and ranking compare candidates across trajectories, and how executable physical checks guide selection. The main example is Van der Pol at μ=0.5, with μ=1.5 as a comparison. A companion explores six-coordinate cylinder-flow dynamics and spatial reconstruction.
 
 ## Open in Colab
 
@@ -41,8 +41,5 @@ On Windows use `.venv\Scripts\activate`. In VS Code select this environment's ke
 
 The main notebook uses the saved candidate pool and performs numerical ranking examples, verification, and predictions live. Optional A regenerates candidates and refines coefficients. Optional B compares the submitted generation-setting experiments. Optional C shows verification changing the selected candidate.
 
-## Updating the tutorial
-
-Edit the notebooks and ordinary source files directly. There are no embedded bundles or duplicate notebook templates. Use `python tools/execute_notebooks.py` to execute all three notebooks and refresh their HTML previews in a standard local Jupyter environment. Fresh generation and optimization remain opt-in.
 
 Numerical conventions and validation are documented in `SOURCE_NOTES.md` and `VALIDATION.md`.
