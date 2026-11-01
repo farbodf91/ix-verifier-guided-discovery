@@ -1,0 +1,3 @@
+mu,test_trajectory_index,test_x0,test_x1,reference_repeat,selection_rule
+0.5,2,-0.8117427155192016,-0.1337461195270524,1,closest to median optimised proposed error among jointly integrable displayed rollouts
+1.5,3,-0.04189740371833195,-0.6805221707258429,2,closest to median optimised proposed error among jointly integrable displayed rollouts

@@ -1,0 +1,2 @@
+seed,mu_values,beam_size,beam_temperature,top_k,shortlist_size,optimiser,optimiser_maxiter,train_ic_seed,validation_ic_seed,test_ic_seed,n_train_ics,n_test_ics,decode_window_indices,reference_window_indices,ranking_window_count,bound_factor,amplitude_tolerance,period_tolerance,amplitude_cv_tolerance,period_cv_tolerance,local_dynamics_factor
+10,"0.5,1.5",20,0.1,20,10,Nelder-Mead,300,1,2,3,12,8,"3,4,5,11,13,16,17,18","4,16,18",24,1.5,0.15,0.1,0.1,0.05,2.0

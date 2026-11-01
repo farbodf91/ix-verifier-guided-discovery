@@ -1,0 +1,13 @@
+{
+  "configuration": "rank4_decode8",
+  "pod_rank": 4,
+  "decode_windows": 8,
+  "candidate_id": 0,
+  "initial_equation": "1.0630 * x_1 | 0.1171 * (1.1330 + -0.0757 * x_3)**-1 + -1.1117 * x_0 | -2.0913 * x_3 | 2.2497 * x_2 + -0.2992 * x_2 * (0.1187 * x_2 + 0.9712 * x_0)",
+  "optimized_equation": "1.025482935387592 * x_1 | 0.07953216083848369 * (1.467609436354229 + -0.1179361706087012 * x_3)**-0.9371028556432472 + -1.09501023142523 * x_0 | -2.116192357399557 * x_3 | 2.133458987897471 * x_2 + -0.2704357989254556 * x_2 * (0.2017165375361145 * x_2 + 0.885002421820666 * x_0)",
+  "initial_training_objective": 0.023776451338925336,
+  "best_training_objective": 0.013487746286799612,
+  "post_optimization_admissible": true,
+  "optimizer_success": false,
+  "optimizer_message": "Maximum number of iterations has been exceeded."
+}

@@ -1,0 +1,3 @@
+mu,shortlist_size,admissible_candidates,rejected_candidates,rollout_candidate_id,verified_candidate_id,verification_changed_selection,verified_candidate_found,post_optimisation_admissible,post_local_dynamics_score,post_amplitude_error,post_period_error,post_amplitude_cv,post_period_cv
+0.5,10,1,9,118,118,False,True,True,0.0008717823005335211,0.007410337187735788,0.002631578947368833,0.0005733741647750459,0.003702129744431394
+1.5,10,1,9,100,100,False,True,True,0.00021099501773620092,0.006782718532274256,0.002358490566037099,0.00015942020558707727,2.4123860866523823e-16

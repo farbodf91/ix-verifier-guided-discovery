@@ -1,0 +1,54 @@
+{
+  "reynolds_number": 300,
+  "data_file": "Data_300.mat (represented in this bundle by fixed_re300_pod_decomposition_rank20.npz)",
+  "grid_shape": [
+    300,
+    200
+  ],
+  "data_sampling_interval": 0.1,
+  "transient_slice": [
+    0,
+    500
+  ],
+  "training_slice": [
+    500,
+    750
+  ],
+  "validation_slice": [
+    750,
+    850
+  ],
+  "test_slice": [
+    850,
+    1000
+  ],
+  "pod_ranks": [
+    4,
+    6
+  ],
+  "pod_representation_diagnostic_ranks": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "decode_counts": [
+    8,
+    24
+  ],
+  "training_windows": 24,
+  "window_duration": 5.0,
+  "beam_size": 20,
+  "beam_temperature": 0.1,
+  "top_k_per_window": 20,
+  "shortlist_size": 10,
+  "optimization_maxiter": 300,
+  "amplitude_tolerance": 0.15,
+  "frequency_tolerance": 0.1,
+  "amplitude_cv_tolerance": 0.1,
+  "frequency_cv_tolerance": 0.05,
+  "local_dynamics_factor": 2.0,
+  "bound_factor": 3.0,
+  "random_seed": 17,
+  "selected_configuration": "rank6_decode8"
+}

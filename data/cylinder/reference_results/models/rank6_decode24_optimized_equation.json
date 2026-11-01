@@ -1,0 +1,13 @@
+{
+  "configuration": "rank6_decode24",
+  "pod_rank": 6,
+  "decode_windows": 24,
+  "candidate_id": 360,
+  "initial_equation": "1.1347 * x_1 | -1.0290 * x_0 | -2.0507 * x_3 | 2.1539 * x_2 | 3.1849 * x_5 | -0.0317 * (-1.1260 + 0.0821 * x_4)**-1 + -3.2038 * x_4",
+  "optimized_equation": "1.1347 * x_1 | -1.029 * x_0 | -2.070020429799156 * x_3 | 2.153900000000002 * x_2 | 3.1849 * x_5 | -0.0317 * (-1.126 + 0.0854315044684671 * x_4)**-1 + -3.2038 * x_4",
+  "initial_training_objective": 0.0490957235925386,
+  "best_training_objective": 0.04880835484627008,
+  "post_optimization_admissible": true,
+  "optimizer_success": true,
+  "optimizer_message": "Optimization terminated successfully."
+}

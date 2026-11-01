@@ -1,0 +1,13 @@
+{
+  "configuration": "rank4_decode24",
+  "pod_rank": 4,
+  "decode_windows": 24,
+  "candidate_id": 41,
+  "initial_equation": "1.0483 * x_1 | -1.0868 * x_0 | -2.2203 * x_3 | 2.0628 * x_2 + -0.2461 * sin(0.0548 + 2.7619 * x_0)",
+  "optimized_equation": "1.022897225291396 * x_1 | -1.091932366565329 * x_0 | -2.106362733856067 * x_3 | 2.125328878315635 * x_2 + -0.35120600548541 * sin(0.0452498753579892 + 3.192792839057427 * x_0)",
+  "initial_training_objective": 0.0218959533523794,
+  "best_training_objective": 0.014282993516375408,
+  "post_optimization_admissible": true,
+  "optimizer_success": false,
+  "optimizer_message": "Maximum number of iterations has been exceeded."
+}

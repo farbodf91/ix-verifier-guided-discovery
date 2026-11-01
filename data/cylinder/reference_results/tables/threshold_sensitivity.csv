@@ -1,0 +1,13 @@
+configuration,threshold_scale,admissible_candidates,selected_candidate_id,nominal_candidate_id,selection_unchanged
+rank4_decode8,0.75,10,0,0,True
+rank4_decode8,1.0,10,0,0,True
+rank4_decode8,1.5,10,0,0,True
+rank4_decode24,0.75,10,41,41,True
+rank4_decode24,1.0,10,41,41,True
+rank4_decode24,1.5,10,41,41,True
+rank6_decode8,0.75,5,20,20,True
+rank6_decode8,1.0,6,20,20,True
+rank6_decode8,1.5,9,20,20,True
+rank6_decode24,0.75,9,360,360,True
+rank6_decode24,1.0,10,360,360,True
+rank6_decode24,1.5,10,360,360,True

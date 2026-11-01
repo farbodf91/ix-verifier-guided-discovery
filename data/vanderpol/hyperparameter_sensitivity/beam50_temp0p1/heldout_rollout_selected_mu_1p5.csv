@@ -1,0 +1,17 @@
+trajectory,score,success,stage,configuration,mu,selection_branch
+mu1.5_eval_00,0.0812693219286393,True,raw,beam50_temp0p1,1.5,rollout_selected
+mu1.5_eval_01,0.05687700159343615,True,raw,beam50_temp0p1,1.5,rollout_selected
+mu1.5_eval_02,0.07889997115911161,True,raw,beam50_temp0p1,1.5,rollout_selected
+mu1.5_eval_03,0.1501340212672777,True,raw,beam50_temp0p1,1.5,rollout_selected
+mu1.5_eval_04,0.06806234241231315,True,raw,beam50_temp0p1,1.5,rollout_selected
+mu1.5_eval_05,0.06396353613566433,True,raw,beam50_temp0p1,1.5,rollout_selected
+mu1.5_eval_06,0.07757491506570115,True,raw,beam50_temp0p1,1.5,rollout_selected
+mu1.5_eval_07,0.09756229566743724,True,raw,beam50_temp0p1,1.5,rollout_selected
+mu1.5_eval_00,0.011559251526783634,True,optimised,beam50_temp0p1,1.5,rollout_selected
+mu1.5_eval_01,0.01206471866404369,True,optimised,beam50_temp0p1,1.5,rollout_selected
+mu1.5_eval_02,0.017190622625433874,True,optimised,beam50_temp0p1,1.5,rollout_selected
+mu1.5_eval_03,0.02654760026430375,True,optimised,beam50_temp0p1,1.5,rollout_selected
+mu1.5_eval_04,0.017907249453312745,True,optimised,beam50_temp0p1,1.5,rollout_selected
+mu1.5_eval_05,0.012462931906113209,True,optimised,beam50_temp0p1,1.5,rollout_selected
+mu1.5_eval_06,0.0350385494817092,True,optimised,beam50_temp0p1,1.5,rollout_selected
+mu1.5_eval_07,0.04238744068107802,True,optimised,beam50_temp0p1,1.5,rollout_selected

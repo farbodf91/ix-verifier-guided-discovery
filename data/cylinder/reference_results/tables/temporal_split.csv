@@ -1,0 +1,5 @@
+segment,first_snapshot,last_snapshot,time_start,time_end,n_snapshots
+excluded transient,1,500,0.1,50.0,500
+training,501,750,50.1,75.0,250
+validation,751,850,75.10000000000001,85.0,100
+final test,851,1000,85.10000000000001,100.0,150
