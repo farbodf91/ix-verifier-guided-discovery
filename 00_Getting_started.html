@@ -7818,7 +7818,8 @@ a.anchor-link {
 <ol>
 <li>Choose <strong>Runtime → Change runtime type → Runtime Version → 2026.07</strong> for Python 3.12. CPU is sufficient for the main walkthrough.</li>
 <li>Run the first setup cell. It retrieves the repository and installs the pinned packages.</li>
-<li>Run subsequent cells in order using the play button or <strong>Shift+Enter</strong>.</li>
+<li>If setup asks you to restart, choose <strong>Runtime → Restart session</strong>, then rerun the setup cell. Do not choose <strong>Disconnect and delete runtime</strong>; a restart keeps the installed packages.</li>
+<li>When setup prints <strong>“Environment ready”</strong>, run subsequent cells in order using the play button or <strong>Shift+Enter</strong>.</li>
 </ol>
 <p>Use <strong>File → Save a copy in Drive</strong> to keep your own edits. Runtime files disappear when the session is deleted; your saved notebook and its outputs remain in Drive.</p>
 </div>
@@ -7861,8 +7862,8 @@ a.anchor-link {
 <td>Select runtime 2026.07 and reconnect.</td>
 </tr>
 <tr>
-<td>Packages changed after imports</td>
-<td>Restart the session and run from setup again.</td>
+<td>“Packages were updated after scientific imports”</td>
+<td>Installation completed, but loaded packages need refreshing. Choose <strong>Runtime → Restart session</strong>, then rerun setup. Do not delete the runtime.</td>
 </tr>
 <tr>
 <td>Runtime disconnected</td>

@@ -29,4 +29,4 @@ The cylinder value measures the full test interval in reduced coordinates. Windo
 
 Scientific cells were executed through an in-process IPython shell. This checks Python execution and captures outputs, but does not test the Colab or VS Code interfaces. `tools/execute_notebooks.py` provides standard Jupyter execution and HTML preview generation.
 
-Colab and VS Code interface testing remains pending. Fresh pretrained-checkpoint download and stochastic candidate generation were not rerun; those operations remain optional. Saved equations include Markdown math and readable plain text, and the HTML previews include executed outputs.
+On November 2, 2026, setup was tested in Colab runtime 2026.07 (Python 3.12, CPU). Installation requested a session restart; after restarting and rerunning setup, it printed “Environment ready”. Scientific-cell execution and output rendering in Colab remain to be checked, as does the VS Code interface. Fresh pretrained-checkpoint download and stochastic candidate generation were not rerun; those operations remain optional. Saved equations include Markdown math and readable plain text, and the HTML previews include executed outputs.
